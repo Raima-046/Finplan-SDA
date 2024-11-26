@@ -1,0 +1,18 @@
+Category: ghar
+Date: 2024-11-30
+Account: Other
+Amount: 8000.0
+Type: Income
+----------------------------------
+Category: raima
+Date: 2024-11-14
+Account: Other
+Amount: 2445.0
+Type: Outgoing
+----------------------------------
+Category: rimsha
+Date: 2024-11-20
+Account: Current
+Amount: 87.0
+Type: Incoming
+----------------------------------

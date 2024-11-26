@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="819.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controllers.FinGoalsController">
+   <children>
+      <AnchorPane layoutX="-14.0" prefHeight="46.0" prefWidth="833.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #332946, black);">
+         <children>
+            <Label layoutX="45.0" layoutY="6.0" text="FinPlan." textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="goback" layoutX="757.0" layoutY="11.0" mnemonicParsing="false" onAction="#goBackToDashboard" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #332946, black);" text="Back" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Label layoutX="42.0" layoutY="69.0" text="Financial Goals">
+         <font>
+            <Font name="Times New Roman" size="32.0" />
+         </font>
+      </Label>
+      <TextField fx:id="gname" layoutX="64.0" layoutY="154.0" />
+      <Label layoutX="64.0" layoutY="126.0" text="Goal name">
+         <font>
+            <Font name="Dubai Medium" size="15.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="gdeadline" layoutX="64.0" layoutY="386.0" prefHeight="25.0" prefWidth="149.0" />
+      <Label layoutX="64.0" layoutY="358.0" text="Deadline">
+         <font>
+            <Font name="Dubai Medium" size="15.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="gtype" layoutX="64.0" layoutY="226.0" prefWidth="150.0" />
+      <Label layoutX="64.0" layoutY="198.0" text="Goal type">
+         <font>
+            <Font name="Dubai Medium" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="savegg" layoutX="139.0" layoutY="538.0" mnemonicParsing="false" onAction="#saveGoal" prefHeight="25.0" prefWidth="77.0" text="Save goal" />
+      <TextField fx:id="gtarget" layoutX="64.0" layoutY="310.0" />
+      <Label layoutX="64.0" layoutY="282.0" text="Target amount">
+         <font>
+            <Font name="Dubai Medium" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="64.0" layoutY="436.0" text="Reminders">
+         <font>
+            <Font name="Dubai Medium" size="15.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="gdaily" layoutX="64.0" layoutY="464.0" mnemonicParsing="false" text="daily" />
+      <CheckBox fx:id="gweek" layoutX="64.0" layoutY="488.0" mnemonicParsing="false" text="weekly" />
+      <CheckBox fx:id="gmonth" layoutX="64.0" layoutY="512.0" mnemonicParsing="false" text="monthly" />
+      <Label layoutX="350.0" layoutY="121.0" text="Your goals">
+         <font>
+            <Font name="Dubai Medium" size="21.0" />
+         </font>
+      </Label>
+      <TableView fx:id="goalTable" layoutX="350.0" layoutY="154.0" onSort="#loadGoalData" prefHeight="236.0" prefWidth="401.0">
+        <columns>
+          <TableColumn fx:id="goalNameColumn" prefWidth="75.0" text="Goal name" />
+          <TableColumn fx:id="goalTypeColumn" prefWidth="75.0" text="Goal type" />
+            <TableColumn fx:id="targetAmountColumn" prefWidth="106.0" text="Target amount" />
+            <TableColumn fx:id="deadlineColumn" prefWidth="71.0" text="Deadline" />
+            <TableColumn fx:id="remindersColumn" prefWidth="73.0" text="Reminders" />
+        </columns>
+      </TableView>
+      <Label layoutX="350.0" layoutY="417.0" text="Delete goal">
+         <font>
+            <Font name="Dubai Medium" size="21.0" />
+         </font>
+      </Label>
+      <TextField fx:id="gid" layoutX="350.0" layoutY="490.0" prefHeight="25.0" prefWidth="90.0" />
+      <Label layoutX="350.0" layoutY="462.0" text="Goal name">
+         <font>
+            <Font name="Dubai Medium" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="delgg" layoutX="661.0" layoutY="490.0" mnemonicParsing="false" onAction="#deleteGoal" prefHeight="25.0" prefWidth="90.0" text="Delete goal" />
+   </children>
+</AnchorPane>

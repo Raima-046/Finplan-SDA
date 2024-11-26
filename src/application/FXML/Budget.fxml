@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controllers.BudgetController">
+    <children>
+        <AnchorPane prefHeight="600.0" prefWidth="819.0">
+            <children>
+                <!-- Header Section -->
+                <AnchorPane prefHeight="50.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #332946, black);">
+                    <children>
+                        <Label layoutX="45.0" layoutY="10.0" text="FinPlan." textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="goBack" layoutX="830.0" layoutY="15.0" mnemonicParsing="false" onAction="#goBackToDashboard" style="-fx-background-color: transparent;" text="Back" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+
+                <!-- Input Section -->
+                <Label layoutX="81.0" layoutY="100.0" text="Budget Details">
+                    <font>
+                        <Font name="Times New Roman" size="28.0" />
+                    </font>
+                </Label>
+                <Label layoutX="81.0" layoutY="150.0" text="Category">
+                    <font>
+                        <Font name="Dubai Medium" size="15.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="budgetCategory" layoutX="81.0" layoutY="180.0" prefHeight="25.0" prefWidth="200.0" />
+                <Label layoutX="81.0" layoutY="220.0" text="Amount">
+                    <font>
+                        <Font name="Dubai Medium" size="15.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="budgetAmount" layoutX="81.0" layoutY="250.0" prefHeight="25.0" prefWidth="200.0" />
+                <Label layoutX="81.0" layoutY="290.0" text="Date">
+                    <font>
+                        <Font name="Dubai Medium" size="15.0" />
+                    </font>
+                </Label>
+                <DatePicker fx:id="budgetDate" layoutX="81.0" layoutY="320.0" prefHeight="26.0" prefWidth="200.0" />
+                <Button fx:id="saveBudgetBtn" layoutX="81.0" layoutY="370.0" mnemonicParsing="false" onAction="#saveBudget" text="Save Budget" />
+                <Button fx:id="lockBudgetBtn" layoutX="200.0" layoutY="370.0" mnemonicParsing="false" onAction="#lockBudget" text="Lock Budget" />
+
+                <!-- Sorting and Actions -->
+                <Label layoutX="411.0" layoutY="100.0" text="Budget Actions">
+                    <font>
+                        <Font name="Times New Roman" size="28.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="sortByCategory" layoutX="411.0" layoutY="179.0" prefHeight="26.0" prefWidth="200.0" promptText="Sort By Category" />
+                <Button fx:id="sortBudgetBtn" layoutX="665.0" layoutY="178.0" mnemonicParsing="false" onAction="#sortBudget" prefHeight="50.0" prefWidth="130.0" text="Sort Budget" />
+                <Button fx:id="shareBudgetBtn" layoutX="665.0" layoutY="248.0" mnemonicParsing="false" onAction="#shareBudget" prefHeight="50.0" prefWidth="130.0" text="Share Budget" />
+                <Button fx:id="deleteBudgetBtn" layoutX="665.0" layoutY="318.0" mnemonicParsing="false" onAction="#deleteBudget" prefHeight="50.0" prefWidth="130.0" text="Delete Budget" />
+
+                <!-- Table View -->
+                <TableView fx:id="budgetTable" layoutX="81.0" layoutY="420.0" prefHeight="230.0" prefWidth="750.0">
+                    <columns>
+                        <TableColumn fx:id="colCategory" prefWidth="150.0" text="Category" />
+                        <TableColumn fx:id="colAmount" prefWidth="150.0" text="Amount" />
+                        <TableColumn fx:id="colDate" prefWidth="150.0" text="Date" />
+                        <TableColumn fx:id="colStatus" prefWidth="150.0" text="Status" />
+                        <TableColumn fx:id="colActions" prefWidth="150.0" text="Actions" />
+                    </columns>
+                </TableView>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,97 @@
+use finplandatabase
+
+CREATE TABLE Users (
+    userid INT AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(50) NOT NULL,
+    lastname VARCHAR(50) NOT NULL,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    contact VARCHAR(15) NOT NULL,
+    addeddate date NOT NULL
+);
+
+drop table Users
+
+select * from Users
+
+CREATE TABLE Transactions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    category VARCHAR(255) NOT NULL,
+    transaction_date DATE NOT NULL,
+    account VARCHAR(255) NOT NULL,
+    amount DECIMAL(10, 2) NOT NULL,
+    transaction_type ENUM('Incoming', 'Outgoing') NOT NULL
+);
+
+drop table Transactions
+
+select * from Transactions
+
+CREATE TABLE Expense (
+    id INT AUTO_INCREMENT PRIMARY KEY,  
+    name VARCHAR(255) NOT NULL,         
+    category VARCHAR(255) NOT NULL,     
+    date DATE NOT NULL,                 
+    account VARCHAR(255) NOT NULL,     
+    amount DECIMAL(10, 2) NOT NULL,     
+    description TEXT                   
+);
+
+select * from Expense
+
+CREATE TABLE Income (
+    id INT AUTO_INCREMENT PRIMARY KEY,  
+    name VARCHAR(255) NOT NULL,         
+    category VARCHAR(255) NOT NULL,     
+    date DATE NOT NULL,                 
+    account VARCHAR(255) NOT NULL,     
+    amount DECIMAL(10, 2) NOT NULL,     
+    description TEXT                   
+);
+
+SELECT * FROM Income;
+
+
+CREATE TABLE Goals (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    goal_name VARCHAR(100) NOT NULL,
+    goal_type VARCHAR(50) NOT NULL,
+    target_amount DECIMAL(10, 2) NOT NULL,
+    deadline DATE NOT NULL,
+    reminders VARCHAR(50) NOT NULL
+);
+
+SELECT * FROM Goals
+
+ALTER TABLE Goals ADD COLUMN user_id INT NOT NULL;
+ALTER TABLE Users ADD COLUMN budget_limit DOUBLE DEFAULT 0;
+
+
+CREATE TABLE budget (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    category VARCHAR(255),
+    amount DECIMAL(10, 2),
+    date DATE,
+    status VARCHAR(50),
+    actions VARCHAR(255)
+);
+
+INSERT INTO budget (category, amount, date, status, actions) VALUES
+('Food', 150.00, '2024-11-01', 'Unlocked', 'No Actions'),
+('Utilities', 100.00, '2024-11-05', 'Unlocked', 'No Actions'),
+('Transport', 50.00, '2024-11-10', 'Unlocked', 'No Actions'),
+('Savings', 200.00, '2024-11-12', 'Unlocked', 'No Actions'),
+('Other', 75.00, '2024-11-15', 'Unlocked', 'No Actions'),
+('Food', 120.00, '2024-11-18', 'Unlocked', 'No Actions'),
+('Utilities', 80.00, '2024-11-20', 'Locked', 'No Actions'),
+('Transport', 60.00, '2024-11-22', 'Locked', 'No Actions'),
+('Savings', 250.00, '2024-11-23', 'Unlocked', 'No Actions'),
+('Other', 100.00, '2024-11-25', 'Locked', 'No Actions');
+
+drop table budgets
+
+select * from budget
+
+
+
+

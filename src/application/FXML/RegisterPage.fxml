@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controllers.RegisterController">
+   <right>
+	 <AnchorPane prefHeight="467.0" prefWidth="697.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #332946, black);" BorderPane.alignment="CENTER">
+                     <children>
+            <ImageView fx:id="imgView" fitHeight="454.0" fitWidth="328.0" layoutX="8.0" layoutY="7.0" opacity="0.88" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/reg.png" />
+               </image></ImageView>
+            <Text fill="#d7d7d7" fontSmoothingType="LCD" layoutX="386.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create an account" wrappingWidth="296.4239959716797">
+               <font>
+                  <Font name="Dubai Medium" size="30.0" />
+               </font>
+            </Text>
+            <TextField fx:id="firstN" layoutX="371.0" layoutY="172.0" prefHeight="26.0" prefWidth="134.0" promptText="First Name" style="-fx-background-color: grey; -fx-text-inner-color: white;" />
+			<TextField fx:id="lastN" layoutX="524.0" layoutY="172.0" prefHeight="26.0" prefWidth="137.0" promptText="Last Name" style="-fx-background-color: grey; -fx-text-inner-color: white;" />
+			<TextField fx:id="contt" layoutX="371.0" layoutY="244.0" prefHeight="26.0" prefWidth="291.0" promptText="Contact" style="-fx-background-color: grey; -fx-text-inner-color: white;" />
+			<PasswordField fx:id="passs" layoutX="371.0" layoutY="280.0" prefHeight="26.0" prefWidth="291.0" promptText="Password" style="-fx-background-color: grey; -fx-text-inner-color: white;" />
+
+			<Button fx:id="registerBtn" layoutX="453.0" layoutY="339.0" mnemonicParsing="false" onAction="#regBtn" opacity="0.85" prefHeight="34.0" prefWidth="117.0" style="-fx-background-color: #493c62; -fx-background-radius: 10;" text="Create account" textFill="WHITE" />
+            <Label layoutX="373.0" layoutY="127.0" text="Already have an account?" textFill="#9e9e9e">
+               <font>
+                  <Font size="11.5" />
+               </font>
+            </Label>
+            <Hyperlink layoutX="505.0" layoutY="123.0" onAction="#goToLogin" text="Login" />
+            <TextField fx:id="userr" layoutX="371.0" layoutY="208.0" prefHeight="26.0" prefWidth="291.0" promptText="Username" style="-fx-background-color: grey; -fx-text-inner-color: white;" />
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </AnchorPane>
+   </right>
+</BorderPane>
